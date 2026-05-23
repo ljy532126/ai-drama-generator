@@ -80,6 +80,8 @@ cd frontend && npx vite --port 3011 --host 0.0.0.0
 
 打开 **http://localhost:3011** 即可使用。
 
+> **注意：** 本地开发务必访问 `3011` 端口（Vite dev server）。不要直接访问 `3010`，那只是后端 API，没有前端页面。如果确实想只用 3010 一个端口，需要先构建前端：`cd frontend && npm run build`。
+
 > 推荐使用 [DeepSeek](https://platform.deepseek.com/api_keys) 的 API Key，价格极低，注册即用，新用户有免费额度。
 
 ---
