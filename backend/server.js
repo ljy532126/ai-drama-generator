@@ -128,9 +128,19 @@ app.use('/api/history', historyRoutes);
 // 日志实时流路由
 app.use('/api/logs', logRoutes);
 
-// SPA fallback — 非API路由返回Vue入口
+// SPA fallback — 非API路由返回Vue入口（生产模式）
+// 本地开发时 frontend/dist 不存在，请通过 Vite dev server (3011端口) 访问
 app.get(/^(?!\/api\/).*/, (req, res) => {
-  res.sendFile(path.join(__dirname, '../frontend/dist/index.html'));
+  const indexPath = path.join(__dirname, '../frontend/dist/index.html');
+  const fs = require('fs');
+  if (fs.existsSync(indexPath)) {
+    res.sendFile(indexPath);
+  } else {
+    res.json({
+      success: false,
+      message: '前端文件未构建。本地开发请访问 http://localhost:3011（Vite dev server），或执行 cd frontend && npm run build 构建前端。'
+    });
+  }
 });
 
 /**
