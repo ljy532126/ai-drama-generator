@@ -39,7 +39,7 @@
 
 ### Docker 部署（推荐）
 
-无需安装 Node.js 和 MongoDB，Docker 全包，一条命令启动。
+无需安装 Node.js 和 MongoDB，Docker 全包，一条命令启动，**只占用一个端口 3011**。
 
 ```bash
 # 1. 克隆项目
@@ -56,7 +56,9 @@ docker-compose up -d
 
 ### 本地部署（不用 Docker）
 
-需要提前安装 Node.js 18+ 和 MongoDB 5+。
+需要提前安装 Node.js 18+ 和 MongoDB 5+。本地开发时前后端分开运行（Vite 热更新 + Express），所以占用**两个端口**：
+- 后端 API：`3010`
+- 前端页面：`3011`（自动代理 API 请求到 3010）
 
 ```bash
 # 1. 克隆项目
