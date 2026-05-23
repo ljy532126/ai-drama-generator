@@ -37,55 +37,46 @@
 
 ## 一键部署
 
-### 方式一：远程部署（从 GitHub 拉取）
+### Docker 部署（推荐）
+
+无需安装 Node.js 和 MongoDB，Docker 全包，一条命令启动。
 
 ```bash
-# 1. 克隆
+# 1. 克隆项目
 git clone https://github.com/ljy532126/ai-drama-generator.git && cd ai-drama-generator
 
-# 2. 配置 Key（编辑 .env，填入你申请的大模型 API Key）
+# 2. 配置 Key（编辑 .env，填入大模型 API Key）
 cp .env.example .env
-
-# 3. 启动
-docker-compose up -d
-```
-
-### 方式二：本地部署（已有项目代码，无需 GitHub）
-
-如果你已经下载/解压了项目代码到本地，直接在项目目录下执行：
-
-```bash
-# 1. 进入项目目录
-cd ai-drama-generator
-
-# 2. 配置 Key
-cp .env.example .env
-# 编辑 .env，至少填入一个 LLM 厂商的 API Key（推荐 DeepSeek，便宜好用）
 
 # 3. 一键启动
 docker-compose up -d
 ```
 
-### 方式三：纯本地运行（不用 Docker）
+打开 **http://localhost:3011** 即可使用。
 
-如果没有 Docker，需要本地安装 Node.js 18+ 和 MongoDB 5+：
+### 本地部署（不用 Docker）
+
+需要提前安装 Node.js 18+ 和 MongoDB 5+。
 
 ```bash
-# 1. 安装依赖
-npm install && cd frontend && npm install && cd ..
+# 1. 克隆项目
+git clone https://github.com/ljy532126/ai-drama-generator.git && cd ai-drama-generator
 
-# 2. 配置 .env
+# 2. 配置环境变量
 cp .env.example .env
 # 编辑 .env，将 MONGODB_URI 改为本地地址: mongodb://localhost:27017/ai_drama
 
-# 3. 启动后端（端口 3010）
+# 3. 安装依赖
+npm install && cd frontend && npm install && cd ..
+
+# 4. 启动后端（端口 3010）
 npm run dev
 
-# 4. 另开终端，启动前端（端口 3011）
+# 5. 另开终端，启动前端（端口 3011）
 cd frontend && npx vite --port 3011 --host 0.0.0.0
 ```
 
-打开 **http://localhost:3011** 就能用了。Docker 方式不需要装 Node.js、MongoDB，最省事。
+打开 **http://localhost:3011** 即可使用。
 
 > 推荐使用 [DeepSeek](https://platform.deepseek.com/api_keys) 的 API Key，价格极低，注册即用，新用户有免费额度。
 
