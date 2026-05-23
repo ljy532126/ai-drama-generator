@@ -285,7 +285,7 @@ router.post('/generate', requireAuth, uploadFields, asyncHandler(async (req, res
 
     if (!resp.ok) {
       const errMsg = result.error?.message || result.message || JSON.stringify(result).slice(0, 500);
-      throw new AppError(translateError(errMsg), 502, ErrorTypes.EXTERNAL_API);
+      throw new AppError(translateError(errMsg), 424, ErrorTypes.EXTERNAL_API);
     }
 
     // Ark返回: { id: "cgt-xxx" }

@@ -232,13 +232,13 @@ router.post('/generate', requireAuth, uploadFields, asyncHandler(async (req, res
 
       if (!submitResp.ok) {
         const errMsg = submitResult.message || submitResult.code || JSON.stringify(submitResult).slice(0, 500);
-        throw new AppError(translateError(errMsg), 502, ErrorTypes.EXTERNAL_API);
+        throw new AppError(translateError(errMsg), 424, ErrorTypes.EXTERNAL_API);
       }
 
       // 异步模式返回: { output: { task_id, task_status: "PENDING" } }
       const taskId = submitResult.output?.task_id;
       if (!taskId) {
-        throw new AppError('DashScope未返回task_id: ' + JSON.stringify(submitResult).slice(0, 300), 502, ErrorTypes.EXTERNAL_API);
+        throw new AppError('DashScope未返回task_id: ' + JSON.stringify(submitResult).slice(0, 300), 424, ErrorTypes.EXTERNAL_API);
       }
 
       // 轮询等待任务完成（最长5分钟）
@@ -255,7 +255,7 @@ router.post('/generate', requireAuth, uploadFields, asyncHandler(async (req, res
         if (ts === 'SUCCEEDED') break;
         if (ts === 'FAILED') {
           const errMsg = taskResult.output?.message || taskResult.message || '任务失败';
-          throw new AppError(translateError(errMsg), 502, ErrorTypes.EXTERNAL_API);
+          throw new AppError(translateError(errMsg), 424, ErrorTypes.EXTERNAL_API);
         }
       }
 
@@ -278,7 +278,7 @@ router.post('/generate', requireAuth, uploadFields, asyncHandler(async (req, res
       }
 
       if (!imageResults.length) {
-        throw new AppError('千问API未返回图片: ' + JSON.stringify(taskResult).slice(0, 300), 502, ErrorTypes.EXTERNAL_API);
+        throw new AppError('千问API未返回图片: ' + JSON.stringify(taskResult).slice(0, 300), 424, ErrorTypes.EXTERNAL_API);
       }
 
       await ImageTask.create({
@@ -363,7 +363,7 @@ router.post('/generate', requireAuth, uploadFields, asyncHandler(async (req, res
 
     if (!resp.ok) {
       const errMsg = result.error?.message || result.message || JSON.stringify(result).slice(0, 500);
-      throw new AppError(translateError(errMsg), 502, ErrorTypes.EXTERNAL_API);
+      throw new AppError(translateError(errMsg), 424, ErrorTypes.EXTERNAL_API);
     }
 
     const imageResults = (result.data || [])
