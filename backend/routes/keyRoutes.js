@@ -321,7 +321,7 @@ router.post('/fetch-models', requireAuth, asyncHandler(async (req, res) => {
       throw new AppError(`获取模型列表失败 (${resp.status}): ${errText}`, resp.status, ErrorTypes.EXTERNAL_API);
     }
 
-    const result = await resp.json();
+    const result = await resp.json().catch(() => ({}));
     const models = (result.data || []).map(m => ({
       id: m.id,
       owned_by: m.owned_by || ''
