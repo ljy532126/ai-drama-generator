@@ -1,0 +1,45 @@
+{
+  "name": "ai-drama-generator",
+  "version": "1.0.0",
+  "description": "AI全自动短剧创作平台 - 基于LangGraph多Agent工作流",
+  "main": "backend/server.js",
+  "scripts": {
+    "start": "node backend/server.js",
+    "dev": "nodemon backend/server.js",
+    "docker:build": "docker build -t ai-drama-generator .",
+    "docker:run": "docker-compose up -d"
+  },
+  "keywords": [
+    "AI",
+    "Drama",
+    "LangGraph",
+    "Agent",
+    "MongoDB"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "@langchain/anthropic": "^0.1.1",
+    "@langchain/core": "^0.1.17",
+    "@langchain/langgraph": "^0.0.19",
+    "@langchain/openai": "^0.0.19",
+    "axios": "^1.6.2",
+    "bcryptjs": "^3.0.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.3",
+    "mongoose": "^8.0.3",
+    "multer": "^2.1.1",
+    "ua-parser-js": "^2.0.10",
+    "uuid": "^9.0.1",
+    "winston": "^3.11.0"
+  },
+  "devDependencies": {
+    "mongodb-memory-server": "^11.1.0",
+    "nodemon": "^3.0.2"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

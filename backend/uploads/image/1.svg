@@ -1,0 +1,95 @@
+<svg width="1200" height="1200" viewBox="0 0 1200 1200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="mainGradient" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#B68AD9"/>
+      <stop offset="100%" stop-color="#8D5CC7"/>
+    </linearGradient>
+
+    <linearGradient id="leafGradient" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#B8F0D2"/>
+      <stop offset="100%" stop-color="#79D5B1"/>
+    </linearGradient>
+
+    <linearGradient id="flowerGradient" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#F6D6EA"/>
+      <stop offset="100%" stop-color="#D7B1D8"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Decorative lines -->
+  <g opacity="0.45" stroke="#9ADBBE" stroke-width="6" stroke-linecap="round">
+    <path d="M820 310L1020 150"/>
+    <path d="M850 350L1080 210"/>
+    <path d="M860 390L1110 290"/>
+
+    <path d="M420 760L180 940"/>
+    <path d="M450 800L240 1010"/>
+    <path d="M500 830L320 1040"/>
+  </g>
+
+  <!-- Main F -->
+  <path
+    d="M560 220
+       C620 170 720 170 790 220
+       C860 270 850 360 760 390
+       C710 405 650 405 620 430
+       L620 820
+       C620 910 570 980 480 1020
+       C430 1040 380 1045 340 1030
+       C410 1020 460 980 490 930
+       C520 880 535 830 535 760
+       L535 260
+       C535 245 545 230 560 220Z"
+    fill="url(#mainGradient)"/>
+
+  <!-- Cross leaf -->
+  <path
+    d="M500 540
+       C620 470 760 470 860 530
+       C800 610 700 660 600 650
+       C540 645 490 620 450 580
+       C460 565 475 550 500 540Z"
+    fill="url(#leafGradient)"/>
+
+  <!-- Stem -->
+  <path
+    d="M520 340
+       C470 430 470 560 510 690
+       C540 780 530 880 480 980"
+    stroke="#9A6CC8"
+    stroke-width="10"
+    stroke-linecap="round"
+    fill="none"/>
+
+  <!-- Leaves -->
+  <ellipse cx="455" cy="590" rx="24" ry="55" transform="rotate(-35 455 590)" fill="url(#leafGradient)"/>
+  <ellipse cx="555" cy="470" rx="20" ry="45" transform="rotate(28 555 470)" fill="url(#leafGradient)"/>
+
+  <!-- Flower petals -->
+  <g fill="url(#flowerGradient)">
+    <ellipse cx="410" cy="390" rx="42" ry="78" transform="rotate(-40 410 390)"/>
+    <ellipse cx="470" cy="350" rx="42" ry="78" transform="rotate(-5 470 350)"/>
+    <ellipse cx="540" cy="380" rx="42" ry="78" transform="rotate(35 540 380)"/>
+    <ellipse cx="520" cy="460" rx="42" ry="78" transform="rotate(75 520 460)"/>
+    <ellipse cx="430" cy="470" rx="42" ry="78" transform="rotate(115 430 470)"/>
+  </g>
+
+  <!-- Buds -->
+  <g fill="#CFA9D6">
+    <ellipse cx="590" cy="250" rx="18" ry="38" transform="rotate(-15 590 250)"/>
+    <ellipse cx="640" cy="210" rx="20" ry="42" transform="rotate(20 640 210)"/>
+    <ellipse cx="510" cy="720" rx="16" ry="34" transform="rotate(-10 510 720)"/>
+  </g>
+
+  <!-- Brand name -->
+  <!-- <text
+    x="600"
+    y="1120"
+    text-anchor="middle"
+    font-size="120"
+    font-family="Cormorant Garamond, Playfair Display, serif"
+    fill="#8D5CC7"
+    letter-spacing="3">
+    Florient
+  </text> -->
+</svg>
