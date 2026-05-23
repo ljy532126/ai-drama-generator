@@ -84,7 +84,7 @@ router.post('/', requireAuth, asyncHandler(async (req, res) => {
 
   const key = await ApiKey.findOneAndUpdate(
     { userId: req.user._id, provider, type: keyType },
-    { $set: { apiKey, model: model || '', baseURL: baseURL || '', type: keyType, isActive: true }, $setOnInsert: { userId: req.user._id, provider, type: keyType } },
+    { $set: { apiKey, model: model || '', baseURL: baseURL || '', type: keyType, isActive: true }, $setOnInsert: { userId: req.user._id, provider } },
     { upsert: true, new: true }
   );
 
