@@ -133,7 +133,7 @@ import { ref, onMounted } from 'vue'
 import { useAuthStore } from '../stores/auth'
 
 const authStore = useAuthStore()
-const githubUrl = 'https://github.com/your-username/ai-drama-generator'
+const githubUrl = 'https://github.com/ljy532126/ai-drama-generator'
 
 const stats = ref({ totalDramas: 0, completedDramas: 0, totalUsers: 0 })
 

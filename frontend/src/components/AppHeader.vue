@@ -57,7 +57,7 @@ const route = useRoute()
 const router = useRouter()
 const appStore = useAppStore()
 const authStore = useAuthStore()
-const githubUrl = 'https://github.com/your-username/ai-drama-generator'
+const githubUrl = 'https://github.com/ljy532126/ai-drama-generator'
 
 function handleLogout() {
   authStore.logout()
